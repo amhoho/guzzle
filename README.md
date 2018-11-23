@@ -1,9 +1,12 @@
-# 1.安装
+# 0.版本
+`2018年11月22日 上午1:36`
+
+# 1. 安装
 ```
 yum -y install curl
 composer require guzzlehttp/guzzle
 ```
-# 2.API集合:
+# 2. API集合:
 
 ## 1. 可选参数的构建Client
 ```php
