@@ -162,7 +162,10 @@ $concurrency=100;//并发数
 $requests = function ($total) {
     $uri = 'http://127.0.0.1:8126/guzzle-server/perf';
     for ($i = 0; $i < $total; $i++) {
-        yield new Request('GET', $uri);
+        yield $i new Request('GET', $uri);
+        //这样的写法可以获得原始索引
+        //比如下方这个pool中即可得到$index='myname'
+        yield 'myname' new Request('GET', $uri);
     }
 };
 $pool = new Pool($client, $requests(100), [
